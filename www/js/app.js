@@ -54,6 +54,20 @@ app.controller('multiselectCtrl', function($scope,$cordovaToast){
       $scope.itemArray.splice(id,1);
     }
 
+    $scope.selctallItem = function(value){
+      if(value == true){
+        for(var i=0;i<$scope.items.length;i++){
+          $scope.itemArray.push({
+            id:$scope.items[i].id,
+            name:$scope.items[i].name
+          });
+        }
+      }
+      if(value == false){
+        $scope.itemArray = [];
+      }
+    }
+
     $scope.items = [
         {
           id :1,

@@ -35,6 +35,9 @@
           </span>
         </div>
         <ion-list>
+          <ion-toggle ng-model="item.checked" ng-change="selctallItem(item.checked)">
+            Select All
+          </ion-toggle>
           <ion-item class="itemlist" ng-repeat="item in items track by $index" on-hold="addItem(item.name,item.id)">
             {{item.name}}
           </ion-item>
