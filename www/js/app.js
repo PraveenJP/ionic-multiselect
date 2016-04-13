@@ -24,6 +24,17 @@ app.run(function($ionicPlatform) {
 });
 
 app.controller('multiselectCtrl', function($scope){
+
+    $scope.itemArray = [];  
+
+    $scope.addItem = function(name,id){
+      $scope.itemArray.push({
+        id:id,
+        name:name
+      });
+      console.log($scope.itemArray);
+    }
+
     $scope.items = [
         {
           id :1,

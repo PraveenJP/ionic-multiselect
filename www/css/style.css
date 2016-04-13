@@ -1,1 +1,12 @@
 /* Empty. Add your own CSS if you like */
+.itemWrap{
+	
+}
+
+.itemSelect{
+	padding: 10px;
+    background-color: #E8E8E8;
+    margin: 15px;
+    border-radius: 8px;
+    display: inline-block;
+}

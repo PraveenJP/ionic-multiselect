@@ -28,8 +28,13 @@
         <h1 class="title">Ionic Blank Starter</h1>
       </ion-header-bar>
       <ion-content ng-controller="multiselectCtrl">
+        <div class="itemWrap" ng-if="itemArray.length != 0">
+          <span class="itemSelect" ng-repeat="itemsArray in itemArray track by $index">
+            {{itemsArray.name}}
+          </span>
+        </div>
         <ion-list>
-          <ion-item ng-repeat="item in items track by $index">
+          <ion-item ng-repeat="item in items track by $index" on-hold="addItem(item.name,item.id)">
             {{item.name}}
           </ion-item>
         </ion-list>
