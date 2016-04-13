@@ -23,7 +23,7 @@ app.run(function($ionicPlatform) {
   });
 });
 
-app.controller('multiselectCtrl', function($scope,$cordovaToast){
+app.controller('multiselectCtrl', function($scope,$cordovaToast,$ionicPopup){
 
     $scope.itemArray = [];  
 
@@ -39,7 +39,10 @@ app.controller('multiselectCtrl', function($scope,$cordovaToast){
         for(i=0;i<length;i++){
           if($scope.itemArray[i].id === id){
             var exist = true;
-            $cordovaToast.showShortCenter('Already Exist');
+              $ionicPopup.alert({
+                title: 'Info!',
+                template: 'Already Exist'
+              });
           }
         }
         if(exist != true){
