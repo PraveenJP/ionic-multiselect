@@ -16,6 +16,7 @@
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
+    <script src="lib/ng-cordova.js"></script>
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
@@ -25,16 +26,16 @@
 
     <ion-pane>
       <ion-header-bar class="bar-stable">
-        <h1 class="title">Ionic Blank Starter</h1>
+        <h1 class="title">Ionic Multiselect</h1>
       </ion-header-bar>
       <ion-content ng-controller="multiselectCtrl">
         <div class="itemWrap" ng-if="itemArray.length != 0">
           <span class="itemSelect" ng-repeat="itemsArray in itemArray track by $index">
-            {{itemsArray.name}}
+            {{itemsArray.name}} <i ng-click="delItem($index)" class="icon ion-ios-close-outline"></i>
           </span>
         </div>
         <ion-list>
-          <ion-item ng-repeat="item in items track by $index" on-hold="addItem(item.name,item.id)">
+          <ion-item class="itemlist" ng-repeat="item in items track by $index" on-hold="addItem(item.name,item.id)">
             {{item.name}}
           </ion-item>
         </ion-list>

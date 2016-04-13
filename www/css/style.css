@@ -1,6 +1,6 @@
 /* Empty. Add your own CSS if you like */
 .itemWrap{
-	
+	box-shadow:0 0 0 4px rgba(0,0,0,.15) inset,0 0 6px rgba(0,0,0,.2) inset;
 }
 
 .itemSelect{
@@ -9,4 +9,14 @@
     margin: 15px;
     border-radius: 8px;
     display: inline-block;
+    box-shadow:0 0 0 1px rgba(0,0,0,.15) inset,0 0 6px rgba(0,0,0,.2) inset;
+}
+
+.icon{
+	margin: 5px;
+    font-size: 16px;
+}
+
+.itemlist:hover{
+	background-color: #DEDADA;
 }

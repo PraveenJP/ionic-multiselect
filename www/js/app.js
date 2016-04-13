@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var app = angular.module('starter', ['ionic'])
+var app = angular.module('starter', ['ionic','ngCordova'])
 
 app.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -23,16 +23,35 @@ app.run(function($ionicPlatform) {
   });
 });
 
-app.controller('multiselectCtrl', function($scope){
+app.controller('multiselectCtrl', function($scope,$cordovaToast){
 
     $scope.itemArray = [];  
 
     $scope.addItem = function(name,id){
-      $scope.itemArray.push({
-        id:id,
-        name:name
-      });
-      console.log($scope.itemArray);
+      if($scope.itemArray.length == 0){
+        $scope.itemArray.push({
+          id:id,
+          name:name
+        });
+      }else{
+        var i;
+        var length = $scope.itemArray.length;
+        for(i=0;i<length;i++){
+          if($scope.itemArray[i].id === id){
+            var exist = true;
+          }
+        }
+        if(exist != true){
+          $scope.itemArray.push({
+            id:id,
+            name:name
+          });
+        }
+      }
+    }
+
+    $scope.delItem = function(id){
+      $scope.itemArray.splice(id,1);
     }
 
     $scope.items = [
