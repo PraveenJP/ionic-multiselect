@@ -39,6 +39,7 @@ app.controller('multiselectCtrl', function($scope,$cordovaToast){
         for(i=0;i<length;i++){
           if($scope.itemArray[i].id === id){
             var exist = true;
+            $cordovaToast.showShortCenter('Already Exist');
           }
         }
         if(exist != true){
@@ -83,11 +84,11 @@ app.controller('multiselectCtrl', function($scope,$cordovaToast){
         },
         {
           id:4,
-          name:'Straberry'
+          name:'Strawberry'
         },
         {
           id:5,
-          name:'Graphs'
+          name:'Greps'
         }
     ];
 });
