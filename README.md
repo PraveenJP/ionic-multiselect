@@ -1,8 +1,7 @@
-# Ionic Multiselect
-
+ Ionic Multiselect
 ========================================
 
-## Multi Select and Select all items using ionic.
+## Tap hold to Multi Select and Select all items using ionic.
 
 Please refer the below demo.. :)
 
